@@ -1,0 +1,41 @@
+.top-users-container {
+    position: fixed;
+    right: 10%;
+    width: 250px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    z-index: 1000;
+}
+
+.top-users-container h2 {
+    margin-top: 0;
+    color: #0033a0;
+    font-size: 1.5rem;
+}
+
+.top-users-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.top-users-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.top-users-list li:last-child {
+    border-bottom: none;
+}
+
+.top-users-list span {
+    font-weight: bold;
+}
+
+.top-users-list .points {
+    color: #0044cc;
+    font-weight: normal;
+}

@@ -8,7 +8,7 @@ from passlib.context import CryptContext
 from fastapi.middleware.cors import CORSMiddleware
 from jose import JWTError, jwt
 from datetime import datetime, timedelta
-from typing import Optional
+from typing import Optional, List
 import base64
 from openai import OpenAI
 import config
@@ -93,6 +93,14 @@ class TestResultCreate(BaseModel):
 
 class TestResultInDB(TestResultCreate):
     user_id: int
+
+    class Config:
+        orm_mode = True
+
+class UserOut(BaseModel):
+    id: int
+    name: str
+    points: int
 
     class Config:
         orm_mode = True
@@ -350,7 +358,7 @@ def save_result(result: TestResultCreate, db: Session = Depends(get_db), current
     db.refresh(db_result)
     return db_result
 
-@app.get("/sat_verbal_results/", response_model=list[TestResultInDB])
+@app.get("/sat_verbal_results/", response_model=List[TestResultInDB])
 def get_results(skip: int = 0, limit: int = 10, db: Session = Depends(get_db), token: str = Depends(OAuth2PasswordBearer(tokenUrl="/login"))):
     user = get_current_user(db, token)
     results = db.query(MokTestsRes).filter(MokTestsRes.user_id == user.id).offset(skip).limit(limit).all()
@@ -407,6 +415,11 @@ def check_sat_math_answer(task: SATMathTaskCreate, db: Session = Depends(get_db)
     else:
         raise HTTPException(status_code=404, detail="Task not found")
 
+
+@app.get("/top_users", response_model=List[UserOut])
+def get_top_users(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
+    top_users = db.query(User).order_by(User.points.desc()).offset(skip).limit(limit).all()
+    return top_users
 
 if __name__ == "__main__":
     import uvicorn
