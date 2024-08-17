@@ -33,6 +33,7 @@ const Profile: React.FC = () => {
 
           const userData = await response.json();
           setUser(userData);
+          setUser((prevUser) => prevUser ? { ...prevUser, points: userData.points } : null);
           console.log(userData);
         } catch (err) {
           setError((err as Error).message);

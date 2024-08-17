@@ -8,6 +8,7 @@ import SignUpPage from './components/Sign-up';
 import TestSelection from './components/TestSelection';
 import Sat_Verbal from './components/Tests/SAT_Verbal';
 import Sat_Math from './components/Tests/Sat_Math';
+import ResultsPage from './components/UserResults';
 const Navigator: React.FC = () => {
     return (
         <Router>
@@ -20,6 +21,7 @@ const Navigator: React.FC = () => {
                 <Route path="/Test" element={<TestSelection />} />
                 <Route path="/Test/Sat_Verbal" element={<Sat_Verbal />} />
                 <Route path="/Test/Sat_Math" element={<Sat_Math />} />
+                <Route path="/Results" element={<ResultsPage/>}/>
             </Routes>
         </Router>
     );

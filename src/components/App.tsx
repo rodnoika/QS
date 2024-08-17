@@ -20,7 +20,7 @@ const App: React.FC = () => {
           </nav>
         </header>
       <main>
-        <Profile profile={userProfile} />
+        <Profile />
         <Recommendations />
         <Challenges />
       </main>
