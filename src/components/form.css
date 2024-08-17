@@ -1,0 +1,101 @@
+.sign-in-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #f0f4f8;
+  color: #333;
+}
+
+.page-title {
+  font-size: 2rem;
+  color: #0033a0;
+  margin-bottom: 1rem;
+}
+
+.sign-in-form {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 400px;
+  width: 100%;
+}
+
+.sign-in-form h2 {
+  font-size: 1.25rem;
+  color: #0033a0;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #0033a0;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.error-message {
+  color: #d9534f;
+  margin-top: 1rem;
+}
+
+.success-message {
+  color: #5bc0de;
+  margin-top: 1rem;
+}
+
+.sign-in-button {
+  background-color: #0033a0;
+  color: #ffffff;
+  border: none;
+  padding: 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.sign-in-button:hover {
+  background-color: #002a80;
+}
+
+.additional-links {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.forgot-password-link {
+  color: #0033a0;
+  text-decoration: none;
+}
+
+.forgot-password-link:hover {
+  text-decoration: underline;
+}
+
+.no-account {
+  margin-top: 1rem;
+}
+
+.sign-up-link {
+  color: #0033a0;
+  text-decoration: none;
+}
+
+.sign-up-link:hover {
+  text-decoration: underline;
+}
