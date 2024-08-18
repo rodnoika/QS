@@ -20,7 +20,7 @@ const SignInPage: React.FC = () => {
         throw new Error('Both fields are required');
       }
 
-      const response = await fetch('http://localhost:8000/login', {
+      const response = await fetch('http://134.122.22.165:8000/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',

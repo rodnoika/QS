@@ -68,7 +68,7 @@ const Sat_Math: React.FC = () => {
 
   const saveTaskToDatabase = async (task: Task) => {
     try {
-      const response = await fetch('http://localhost:8000/save_sat_math_task', { // Update endpoint
+      const response = await fetch('http://134.122.22.165:8000/save_sat_math_task', { // Update endpoint
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -92,7 +92,7 @@ const Sat_Math: React.FC = () => {
     if (tasks.length > 0) {
       const task = tasks[currentTaskIndex];
       try {
-        const response = await fetch('http://localhost:8000/check_sat_math_answer', { // Update endpoint
+        const response = await fetch('http://134.122.22.165:8000/check_sat_math_answer', { // Update endpoint
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -149,7 +149,7 @@ const Sat_Math: React.FC = () => {
 
   const handleFinishTest = async () => {
     try {
-      const response = await fetch('http://localhost:8000/sat_math_results', { // Update endpoint
+      const response = await fetch('http://134.122.22.165:8000/sat_math_results', { // Update endpoint
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

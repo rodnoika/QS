@@ -47,7 +47,7 @@ const Sat_Verbal: React.FC = () => {
       const tasks = [];
       for (let i = 0; i < 27; i++) {
         try {
-          const response = await fetch('http://localhost:8000/generate_sat_verbal_task');
+          const response = await fetch('http://134.122.22.165:8000/generate_sat_verbal_task');
           if (!response.ok) {
             throw new Error('Network response was not ok');
           }
@@ -67,7 +67,7 @@ const Sat_Verbal: React.FC = () => {
 
   const saveTaskToDatabase = async (task: Task) => {
     try {
-      const response = await fetch('http://localhost:8000/save_sat_verbal_task', {
+      const response = await fetch('http://134.122.22.165:8000/save_sat_verbal_task', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -91,7 +91,7 @@ const Sat_Verbal: React.FC = () => {
     if (tasks.length > 0) {
       const task = tasks[currentTaskIndex];
       try {
-        const response = await fetch('http://localhost:8000/check_sat_verbal_answer', {
+        const response = await fetch('http://134.122.22.165:8000/check_sat_verbal_answer', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -147,7 +147,7 @@ const Sat_Verbal: React.FC = () => {
 
   const handleFinishTest = async () => {
     try {
-      const response = await fetch('http://localhost:8000/sat_verbal_results', {
+      const response = await fetch('http://134.122.22.165:8000/sat_verbal_results', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

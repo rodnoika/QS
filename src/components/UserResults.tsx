@@ -19,7 +19,7 @@ const ResultsPage: React.FC = () => {
   useEffect(() => {
     const fetchResults = async () => {
       try {
-        const response = await fetch('http://localhost:8000/sat_verbal_results/', {
+        const response = await fetch('http://134.122.22.165:8000/sat_verbal_results/', {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -45,7 +45,7 @@ const ResultsPage: React.FC = () => {
   const addPoints = async (amount: number) => {
     if (token) {
       try {
-        const response = await fetch('http://localhost:8000/users/me/add-points', {
+        const response = await fetch('http://134.122.22.165:8000/users/me/add-points', {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${token}`,

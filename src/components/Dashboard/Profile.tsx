@@ -20,7 +20,7 @@ const Profile: React.FC = () => {
       const token = Cookies.get('access_token');
       if (token) {
         try {
-          const response = await fetch('http://localhost:8000/users/me', {
+          const response = await fetch('http://134.122.22.165:8000/users/me', {
             method: 'GET',
             headers: {
               'Authorization': `Bearer ${token}`,
@@ -62,7 +62,7 @@ const Profile: React.FC = () => {
         const formData = new FormData();
         formData.append('file', selectedFile);
 
-        const response = await fetch('http://localhost:8000/users/me/profile-picture', {
+        const response = await fetch('http://134.122.22.165:8000/users/me/profile-picture', {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -86,7 +86,7 @@ const Profile: React.FC = () => {
     const token = Cookies.get('access_token');
     if (token) {
       try {
-        const response = await fetch('http://localhost:8000/users/me/add-points', {
+        const response = await fetch('http://134.122.22.165:8000/users/me/add-points', {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${token}`,
