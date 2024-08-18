@@ -30,7 +30,7 @@ const Math: React.FC = () => {
 
   const saveTask = async (task: { question: string; answer: string }) => {
     try {
-      const response = await fetch('http://134.122.22.165:8000/save_sat_math_task', {
+      const response = await fetch('http://134.122.22.165:8000/check_sat_math_answer', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -20,7 +20,7 @@ const Profile: React.FC = () => {
       const token = Cookies.get('access_token');
       if (token) {
         try {
-          const response = await fetch('http://134.122.22.165:8000/users/me', {
+          const response = await fetch('http://localhost:8000/users/me', {
             method: 'GET',
             headers: {
               'Authorization': `Bearer ${token}`,
