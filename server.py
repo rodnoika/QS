@@ -365,7 +365,7 @@ def get_results(skip: int = 0, limit: int = 10, db: Session = Depends(get_db), t
     return results
 
 def generate_sat_math_task():
-    prompt = "Generate an SAT math question with one correct answer and provide a brief explanation."
+    prompt = "Generate an SAT math question with one correct answer and provide a brief explanation. Without solution,without **"
     messages = [
         {"role": "system", "content": "It is necessary to write a math problem for the SAT, with 4 answers and only one of them is correct. The correct answer must be written in the format Answer: (Correct answer)."},
         {"role": "user", "content": prompt}
@@ -406,7 +406,6 @@ def check_sat_math_answer(task: SATMathTaskCreate, db: Session = Depends(get_db)
         if db_task.answer.strip() and task.answer.strip():
             is_correct = db_task.answer.strip().lower() == task.answer.strip().lower()
         else:
-            # Handle empty answers
             is_correct = False
         return {
             "is_correct": is_correct,
