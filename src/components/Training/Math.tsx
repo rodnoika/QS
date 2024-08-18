@@ -15,7 +15,7 @@ const Math: React.FC = () => {
   const fetchNewTask = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch('http://134.122.22.165:8000/generate_sat_math_task');
+      const response = await fetch('http://localhost:8000/generate_sat_math_task');
       if (!response.ok) throw new Error('Failed to fetch task');
       const data = await response.json();
       setTask(data);
@@ -30,7 +30,7 @@ const Math: React.FC = () => {
 
   const saveTask = async (task: { question: string; answer: string }) => {
     try {
-      const response = await fetch('http://64.227.24.115:8000/check_sat_math_answer', {
+      const response = await fetch('http://localhost:8000/check_sat_math_answer', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ const Math: React.FC = () => {
 
   const checkAnswer = async () => {
     try {
-      const response = await fetch('http://64.227.24.115:8000/check_sat_math_answer', {
+      const response = await fetch('http://localhost:8000/check_sat_math_answer', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

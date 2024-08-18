@@ -19,7 +19,7 @@ const ResultsPage: React.FC = () => {
   useEffect(() => {
     const fetchResults = async () => {
       try {
-        const response = await fetch('http://134.122.22.165:8000/sat_verbal_results/', {
+        const response = await fetch('http://64.227.24.115:8000/sat_verbal_results/', {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`,

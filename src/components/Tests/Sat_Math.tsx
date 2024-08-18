@@ -148,7 +148,7 @@ const Sat_Math: React.FC = () => {
 
   const handleFinishTest = async () => {
     try {
-      const response = await fetch('http://64.227.24.115:8000/sat_math_results', {
+      const response = await fetch('http://localhost:8000/sat_math_results', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
