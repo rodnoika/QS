@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './UserResults.css'; // Import your CSS file for styling
+import './UserResults.css'; 
 import Cookies from 'js-cookie';
+import Logo from './Logo'
 
 interface TestResult {
   id: number;
@@ -73,6 +74,7 @@ const ResultsPage: React.FC = () => {
   return (
     <div className="results-page">
       <nav className="navbar">
+        <div className='logo'><Logo/></div>
         <h1>Results</h1>
       </nav>
       <div className="results-container">
