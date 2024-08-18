@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-
 import './form.css';
 import Logo from '../Logo';
 
@@ -11,8 +10,7 @@ const SignUpPage: React.FC = () => {
   const [password, setPassword] = useState<string>('');
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
-  const navigate = useNavigate(); // Хук для навигации
-
+  const navigate = useNavigate();
 
   const handleSignUp = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -24,7 +22,7 @@ const SignUpPage: React.FC = () => {
         throw new Error('All fields are required');
       }
 
-      const response = await fetch('http://134.122.22.165:8000/register', {
+      const response = await fetch('http://134.122.22.165/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -50,7 +48,7 @@ const SignUpPage: React.FC = () => {
 
   return (
     <div className="sign-in-page">
-      <Logo/>
+      <Logo />
       <h1 className="page-title">Sign Up</h1>
       <form className="sign-in-form" onSubmit={handleSignUp}>
         <h2>Введите свою почту, пароль, имя и фамилию</h2>
@@ -106,4 +104,4 @@ const SignUpPage: React.FC = () => {
   );
 };
 
-export default SignUpPage
+export default SignUpPage;

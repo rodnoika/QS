@@ -48,7 +48,7 @@ const Sat_Math: React.FC = () => {
       const tasks = [];
       for (let i = 0; i < 27; i++) {
         try {
-          const response = await fetch('http://localhost:8000/generate_sat_math_task'); 
+          const response = await fetch('http://134.122.22.165/generate_sat_math_task'); 
           if (!response.ok) {
             throw new Error('Network response was not ok');
           }
@@ -68,7 +68,7 @@ const Sat_Math: React.FC = () => {
 
   const saveTaskToDatabase = async (task: Task) => {
     try {
-      const response = await fetch('http://134.122.22.165:8000/save_sat_math_task', { // Update endpoint
+      const response = await fetch('http://134.122.22.165/save_sat_math_task', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -92,7 +92,7 @@ const Sat_Math: React.FC = () => {
     if (tasks.length > 0) {
       const task = tasks[currentTaskIndex];
       try {
-        const response = await fetch('http://134.122.22.165:8000/check_sat_math_answer', { // Update endpoint
+        const response = await fetch('http://134.122.22.165/check_sat_math_answer', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -116,7 +116,6 @@ const Sat_Math: React.FC = () => {
           setFeedback(`Incorrect answer. The correct answer is: ${result.correct_answer}`);
         }
 
-        // Mark the current task as submitted
         setSubmittedTasks((prevSubmittedTasks) => {
           const updated = [...prevSubmittedTasks];
           updated[currentTaskIndex] = true;
@@ -149,7 +148,7 @@ const Sat_Math: React.FC = () => {
 
   const handleFinishTest = async () => {
     try {
-      const response = await fetch('http://134.122.22.165:8000/sat_math_results', { // Update endpoint
+      const response = await fetch('http://134.122.22.165/sat_math_results', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -219,7 +218,6 @@ const Sat_Math: React.FC = () => {
                 >
                   Submit
                 </button>
-                {feedback && <p className="feedback">{feedback}</p>}
                 <div className="navigation-buttons">
                   <button className="task-button" onClick={handlePreviousTask} disabled={currentTaskIndex === 0}>
                     Previous Task

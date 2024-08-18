@@ -3,6 +3,7 @@ import './Sat_Verbal.css';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import Logo from '../Logo';
+
 interface Task {
   question: string;
   answer: string;
@@ -180,10 +181,12 @@ const Sat_Verbal: React.FC = () => {
       </React.Fragment>
     ));
   };
+
   const handleCloseModal = () => {
     setShowResultModal(false);
     navigate("/");
   };
+
   const currentTask = tasks[currentTaskIndex];
 
   return (
@@ -215,7 +218,6 @@ const Sat_Verbal: React.FC = () => {
                 >
                   Submit
                 </button>
-                {feedback && <p className="feedback">{feedback}</p>}
                 <div className="navigation-buttons">
                   <button className="task-button" onClick={handlePreviousTask} disabled={currentTaskIndex === 0}>
                     Previous Task

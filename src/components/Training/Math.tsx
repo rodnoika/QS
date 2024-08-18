@@ -20,7 +20,7 @@ const Math: React.FC = () => {
       const data = await response.json();
       setTask(data);
       setFeedback(null);
-      await saveTask(data); // Save the task after fetching
+      await saveTask(data); 
     } catch (error) {
       setFeedback('Failed to load task.');
     } finally {

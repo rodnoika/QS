@@ -8,7 +8,7 @@ const SignInPage: React.FC = () => {
   const [password, setPassword] = useState<string>('');
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
-  const navigate = useNavigate(); // Хук для навигации
+  const navigate = useNavigate(); 
 
   const handleSignIn = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -20,7 +20,7 @@ const SignInPage: React.FC = () => {
         throw new Error('Both fields are required');
       }
 
-      const response = await fetch('http://134.122.22.165:8000/login', {
+      const response = await fetch('http://134.122.22.165/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -50,7 +50,7 @@ const SignInPage: React.FC = () => {
 
   return (
     <div className="sign-in-page">
-      <Logo/>
+      <Logo />
       <h1 className="page-title">Sign in</h1>
       <form className="sign-in-form" onSubmit={handleSignIn}>
         <h2>Введите свою почту и пароль</h2>
