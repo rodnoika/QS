@@ -15,7 +15,7 @@ const TopUsers: React.FC = () => {
   useEffect(() => {
     const fetchTopUsers = async () => {
       try {
-        const response = await fetch('http://134.122.22.165/top_users');
+        const response = await fetch('http://64.227.24.115/top_users');
         if (!response.ok) {
           throw new Error('Failed to fetch top users');
         }

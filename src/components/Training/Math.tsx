@@ -30,7 +30,7 @@ const Math: React.FC = () => {
 
   const saveTask = async (task: { question: string; answer: string }) => {
     try {
-      const response = await fetch('http://134.122.22.165:8000/check_sat_math_answer', {
+      const response = await fetch('http://64.227.24.115:8000/check_sat_math_answer', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ const Math: React.FC = () => {
 
   const checkAnswer = async () => {
     try {
-      const response = await fetch('http://134.122.22.165:8000/check_sat_math_answer', {
+      const response = await fetch('http://64.227.24.115:8000/check_sat_math_answer', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

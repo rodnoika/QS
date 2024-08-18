@@ -45,7 +45,7 @@ const ResultsPage: React.FC = () => {
   const addPoints = async (amount: number) => {
     if (token) {
       try {
-        const response = await fetch('http://134.122.22.165:8000/users/me/add-points', {
+        const response = await fetch('http://64.227.24.115:8000/users/me/add-points', {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${token}`,

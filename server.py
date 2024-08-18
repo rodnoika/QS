@@ -114,15 +114,12 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 30
 app = FastAPI()
 
 origins = [
-    "http://localhost:3000",
-    "http://localhost:5173",
-    "http://134.122.22.165:3000",
-    "http://134.122.22.165:5173"
+    "http://64.227.24.115:5173",
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -421,6 +418,7 @@ def check_sat_math_answer(task: SATMathTaskCreate, db: Session = Depends(get_db)
 def get_top_users(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
     top_users = db.query(User).order_by(User.points.desc()).offset(skip).limit(limit).all()
     return top_users
+
 
 if __name__ == "__main__":
     import uvicorn
