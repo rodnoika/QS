@@ -357,7 +357,7 @@ def save_result(result: TestResultCreate, db: Session = Depends(get_db), current
     db.refresh(db_result)
     return db_result
 
-@app.get("/sat_verbal_results/", response_model=List[TestResultInDB])
+@app.get("/sat_verbal_results/", response_model=list[TestResultInDB])
 def get_results(skip: int = 0, limit: int = 10, db: Session = Depends(get_db), token: str = Depends(OAuth2PasswordBearer(tokenUrl="/login"))):
     user = get_current_user(db, token)
     results = db.query(MokTestsRes).filter(MokTestsRes.user_id == user.id).offset(skip).limit(limit).all()
