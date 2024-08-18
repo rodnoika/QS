@@ -22,7 +22,7 @@ const SignUpPage: React.FC = () => {
         throw new Error('All fields are required');
       }
 
-      const response = await fetch('http://64.227.24.115/register', {
+      const response = await fetch('http://64.227.24.115:8000/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
