@@ -100,7 +100,7 @@ const TestSelection: React.FC = () => {
         >
           <h2>SAT</h2>
           <ul>
-            <Link to='/Test/Sat_Math'><li
+            <Link to='/Test/Sat_Verbal'><li
               onMouseEnter={() => setChapter('Verbal')}
             ><i className="fa fa-book"></i> Verbal</li></Link>
             <Link to='/Test/Sat_Math'><li
