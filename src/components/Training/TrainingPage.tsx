@@ -1,5 +1,6 @@
 import React from 'react';
 import './TrainingPage.css';
+import Logo from '../Logo';
 
 const TrainingPage: React.FC = () => {
   const blockTitles = [
@@ -13,6 +14,7 @@ const TrainingPage: React.FC = () => {
 
   return (
     <div className="training-page">
+        <Logo/>
       <h1 className="page-title">Тренировка</h1>
       <div className="blocks-container">
         {blockTitles.map((title, index) => (
@@ -20,9 +22,6 @@ const TrainingPage: React.FC = () => {
             {title}
           </div>
         ))}
-      </div>
-      <div className='home-button'>
-        Домой
       </div>
     </div>
   );

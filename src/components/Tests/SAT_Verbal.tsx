@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Sat_Verbal.css';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
-
+import Logo from '../Logo';
 interface Task {
   question: string;
   answer: string;
@@ -192,6 +192,7 @@ const Sat_Verbal: React.FC = () => {
         <p className="loading">Loading tasks...</p>
       ) : (
         <>
+          <Logo/>
           <TaskList
             tasks={tasks}
             currentTaskIndex={currentTaskIndex}

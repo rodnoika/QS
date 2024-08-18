@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './Math.css'; // Import your CSS file for styling
+import './Math.css'; 
+import Logo from '../Logo';
 
 const Math: React.FC = () => {
   const [task, setTask] = useState<{ question: string; answer: string } | null>(null);
@@ -70,6 +71,7 @@ const Math: React.FC = () => {
 
   return (
     <div className="sat-math-task-page">
+        <Logo/>
       <h1>SAT Math Task</h1>
       {isLoading ? (
         <p>Loading task...</p>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Sat_Math.css'; 
 import { useNavigate } from 'react-router-dom'; 
 import Cookies from 'js-cookie';
+import Logo from '../Logo';
 
 interface Task {
   question: string;
@@ -195,6 +196,7 @@ const Sat_Math: React.FC = () => {
         <p className="loading">Loading tasks...</p>
       ) : (
         <>
+          <Logo/>
           <TaskList
             tasks={tasks}
             currentTaskIndex={currentTaskIndex}

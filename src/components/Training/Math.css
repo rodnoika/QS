@@ -1,7 +1,15 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #313FEE ;
+
+  }
 .sat-math-task-page {
     font-family: Arial, sans-serif;
     padding: 20px;
-    background-color: #f4f4f4;
+    margin-left: 32vw;
   }
   
   .sat-math-task-page h1 {
@@ -10,6 +18,7 @@
   }
   
   .task-container {
+    max-height: 67vh;
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;

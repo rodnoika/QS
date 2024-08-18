@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './TestSelection.css';
+import Logo from '../Logo';
+import { Link } from 'react-router-dom';
 
 const TestSelection: React.FC = () => {
   const [hoveredTest, setHoveredTest] = useState<string | null>(null);
@@ -69,6 +71,7 @@ const TestSelection: React.FC = () => {
 
   return (
     <div className="test-selection">
+      <div className='Logo-color'><Logo/></div>
       <h1>Select Your Test</h1>
       <div className="test-options">
         <div
@@ -97,12 +100,12 @@ const TestSelection: React.FC = () => {
         >
           <h2>SAT</h2>
           <ul>
-            <li
+            <Link to='/Test/Sat_Math'><li
               onMouseEnter={() => setChapter('Verbal')}
-            ><i className="fa fa-book"></i> Verbal</li>
-            <li
+            ><i className="fa fa-book"></i> Verbal</li></Link>
+            <Link to='/Test/Sat_Math'><li
               onMouseEnter={() => setChapter('Math')}
-            ><i className="fa fa-calculator"></i> Math</li>
+            ><i className="fa fa-calculator"></i> Math</li></Link>
           </ul>
         </div>
       </div>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import './form.css';
+import Logo from '../Logo';
 
 const SignUpPage: React.FC = () => {
   const [email, setEmail] = useState<string>('');
@@ -49,6 +50,7 @@ const SignUpPage: React.FC = () => {
 
   return (
     <div className="sign-in-page">
+      <Logo/>
       <h1 className="page-title">Sign Up</h1>
       <form className="sign-in-form" onSubmit={handleSignUp}>
         <h2>Введите свою почту, пароль, имя и фамилию</h2>

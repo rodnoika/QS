@@ -2,7 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: #f4f4f4;
+    background-color: #313FEE ;
 }
 
 .training-page {
@@ -12,13 +12,13 @@ html, body {
 
 .page-title {
     font-size: 2.5rem;
-    color: #333;
     text-align: center;
     margin-bottom: 30px;
 }
 
 .blocks-container {
     display: flex;
+    text-align: center;
     flex-wrap: wrap;
     gap: 30px;
 }

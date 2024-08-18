@@ -26,6 +26,7 @@ html, body {
     font-weight: bold;
     text-align: center;
     white-space: pre-wrap;
+    color: white;
 }
 
 .task-input {
@@ -50,7 +51,7 @@ html, body {
 }
 
 .task-button:hover {
-    background-color: #0056b3;
+    background-color: #0057b3;
 }
 
 .feedback {

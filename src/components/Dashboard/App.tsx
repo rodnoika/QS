@@ -5,14 +5,15 @@ import Profile from './Profile';
 import Challenges from './Challenges';
 import Recommendations from './Recommendations';
 import TopUsers from './TopUsers';
+import Logo from '../Logo';
 
 
 const App: React.FC = () => {
-  const [userProfile, setUserProfile] = useState({ name: 'John Doe', progress: 75, points: 10 });
 
   return (
     <div className="App">
       <header className="App-header">
+          <Logo/>
           <h1>QuickStarter</h1>
           <nav>
             <Link to="/">Home</Link>
